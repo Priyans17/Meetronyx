@@ -4,5 +4,6 @@ dotenv.config(); //to load the .env file and make the variables available in pro
 
 export const ENV = {
     PORT: process.env.PORT,
-    DB_URL: process.env.DB_URL
+    DB_URL: process.env.DB_URL,
+    NODE_ENV: process.env.NODE_ENV,
 }
