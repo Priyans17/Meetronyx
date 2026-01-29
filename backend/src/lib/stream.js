@@ -1,8 +1,17 @@
 import { ENV } from "./env.js";
 import { StreamChat } from "stream-chat";
+import { StreamClient } from "@stream-io/node-sdk";
 
-// Initialize Stream Chat client
+// Initialize Stream Chat client for messaging
 export const chatClient = new StreamChat(ENV.STREAM_API_KEY, ENV.STREAM_API_SECRET);
+
+// Initialize Stream Video client for video calls (only if credentials are available)
+export const streamClient = ENV.STREAM_API_KEY && ENV.STREAM_API_SECRET 
+  ? new StreamClient({
+      apiKey: ENV.STREAM_API_KEY,
+      secret: ENV.STREAM_API_SECRET,
+    })
+  : null;
 
 // Stream API helper functions for managing users
 export const upsertStreamUser = async ({ id, name, image }) => {
