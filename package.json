@@ -1,7 +1,7 @@
 {
   "name": "meetronyx",
   "version": "1.0.0",
-  "description": "",
+  "description": "Interview practice platform with video sessions and real-time chat",
   "main": "index.js",
   "scripts": {
     "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
